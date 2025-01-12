@@ -1,10 +1,10 @@
 from flask import redirect
 from flask_login import logout_user
 
-from CyonApp import app, db, dao
+from App import app, db, dao
 from flask_admin import Admin, BaseView, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from CyonApp.models import User, UserRole, RoomType, Room
+from App.models import User, UserRole, RoomType, Room
 from flask_login import current_user
 from flask import request
 
@@ -87,7 +87,7 @@ class RoomView(AdminModelView):
     column_filters = ['room_number', 'floor', 'available', 'room_type_id']
 
 
-admin = Admin(app=app, name="Cyon Hotel Administration", template_mode="bootstrap4", index_view=MyAdminIndex())
+admin = Admin(app=app, name="Hotel T&T Administration", template_mode="bootstrap4", index_view=MyAdminIndex())
 
 admin.add_view(RuleView(name='Quy định'))
 admin.add_view(RoomTypeView(RoomType, db.session, name='Loại phòng'))

@@ -2,8 +2,8 @@ import os
 
 from flask_login import current_user
 
-from CyonApp import app, db
-from CyonApp.models import RoomType, Room, Reservation, ReservationDetails, ReservationDetailsGuest, Guest
+from App import app, db
+from App.models import RoomType, Room, Reservation, ReservationDetails, ReservationDetailsGuest, Guest
 from sqlalchemy import or_, and_, not_, func, extract
 import json
 

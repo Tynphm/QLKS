@@ -1,20 +1,25 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-<div class="container mt-3 w-100 my-bg rounded-5">
+<div class="container mt-5 w-100 my-bg rounded-5">
     <div class="row m-0 d-flex justify-content-evenly flex-wrap">
+        <!-- Phần hình ảnh -->
         <div class="col-lg-6 col-sm-12 p-0">
-            <div>
-                <img class="img-fluid p-4" src="{{ rooms[0].image }}" alt=""/>
+            <div class="image-container">
+                <img class="img-fluid p-4 rounded-3 shadow-lg" src="{{ rooms[0].image }}" alt="Room Image"/>
             </div>
         </div>
+
+        <!-- Phần thông tin phòng -->
         <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-center p-4">
-            <div class="h1 display-6 font-title text-start text-uppercase fw-bold mt-4">{{ rooms[0].name }}</div>
-            <p class="m-0"><i class="fa-solid fa-user-group"></i> : 1-{{ rooms[0].max_people }} khách</p>
-            <p class="m-0"><i class="fa-solid fa-wallet"></i> : {{ "{:,.0f}".format(rooms[0].price) }} VNĐ/ngày</p>
-            <div class="description">
-<!--                <h3 class="text-primary">Mô tả chi tiết</h3>-->
-                <p>Mô tả: {{ rooms[0].description }}</p>
+            <div class="room-details">
+                <h1 class="display-6 font-title text-start text-uppercase fw-bold text-primary">{{ rooms[0].name }}</h1>
+                <p class="m-0"><i class="fa-solid fa-user-group"></i> : 1-{{ rooms[0].max_people }} khách</p>
+                <p class="m-0"><i class="fa-solid fa-wallet"></i> : {{ "{:,.0f}".format(rooms[0].price) }} VNĐ/ngày</p>
+
+                <div class="description mt-4">
+                    <p><strong>Mô tả:</strong> {{ rooms[0].description }}</p>
+                </div>
 
                 <div class="amenities mt-3">
                     <h5 class="text-secondary">Tiện nghi nổi bật:</h5>
@@ -23,11 +28,8 @@
                         <li><i class="fa-solid fa-shower"></i> Phòng tắm riêng với vòi sen</li>
                         <li><i class="fa-solid fa-tv"></i> Tivi màn hình phẳng</li>
                         <li><i class="fa-solid fa-wifi"></i> Wi-Fi miễn phí</li>
-                        <!-- Thêm tiện nghi nếu cần -->
                     </ul>
                 </div>
-
-
             </div>
         </div>
     </div>

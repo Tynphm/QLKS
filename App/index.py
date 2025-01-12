@@ -1,4 +1,4 @@
-from CyonApp import app, dao, admin, utils, send_mail, login, controllers
+from App import app, dao, admin, utils, send_mail, login, controllers
 
 
 app.add_url_rule('/', 'index', controllers.index)
@@ -61,5 +61,5 @@ def user_load(user_id):
 
 
 if __name__ == '__main__':
-    from CyonApp.admin import *
+    from App.admin import *
     app.run(debug=True, port=5002)

@@ -1,7 +1,7 @@
 import hashlib
 from datetime import datetime
-from CyonApp import db
-from CyonApp.models import User, UserRole
+from App import db
+from App.models import User, UserRole
 
 
 def cart_stats(cart):
@@ -60,6 +60,6 @@ def get_user_by_id(user_id):
 
 
 if __name__ == '__main__':
-    from CyonApp import app
+    from App import app
     with app.app_context():
         pass

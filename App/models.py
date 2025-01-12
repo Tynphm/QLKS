@@ -3,7 +3,7 @@ from pydoc import describe
 from sqlalchemy import Column, Integer, String, Float, Boolean, Text, ForeignKey, Enum, DateTime
 from sqlalchemy.orm import relationship
 from enum import Enum as MyEnum
-from CyonApp import db, app
+from App import db, app
 from datetime import datetime
 from flask_login import UserMixin
 
@@ -111,14 +111,14 @@ if __name__ == '__main__':
         db.drop_all()
         db.create_all()
         import hashlib
-        password = "cyon"
+        password = "staff"
         password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
-        u = User(name="Cyon1", username="staff", password=password)
+        u = User(name="Nhân viên", username="staff", password=password)
         db.session.add(u)
         db.session.commit()
-        password = "cyon"
+        password = "admin"
         password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
-        u2 = User(name="Cyon2", username="admin", password=password, user_role=UserRole.Admin)
+        u2 = User(name="Quản trị", username="admin", password=password, user_role=UserRole.Admin)
         db.session.add(u2)
         db.session.commit()
         t1 = RoomType(name="SUPERIOR DOUBLE BED",

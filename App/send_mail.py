@@ -4,8 +4,8 @@ import smtplib
 
 
 def send(receiver, email_receiver, check_in, check_out, cart, total):
-    email = 'cyonhotel@gmail.com'
-    password = "lhpspkeswxzidcci"
+    email = 'hoteltt11@gmail.com'
+    password = "casn fvwc bvqv odcd"
     info = ""
     for c in cart.values():
         info += "{} phòng {},".format(c["quantity"], c["name"])
@@ -14,12 +14,12 @@ def send(receiver, email_receiver, check_in, check_out, cart, total):
     subject = "Thông tin đơn đặt phòng"
     body = """
     Chào {},
-    Bạn vừa đặt phòng thành công bên khách sạn Open United của chúng tôi. Thông tin đơn đặt phòng bao gồm:
+    Bạn vừa đặt phòng thành công bên khách sạn Hotel T&T của chúng tôi. Thông tin đơn đặt phòng bao gồm:
     Ngày nhận phòng: {}
     Ngày trả phòng: {}
     Các phòng đã đặt: {}
     Tổng tiền: {}
-    Cảm ơn quý khách đã chọn Cyon Hotel, chúc quý khách có một kỳ nghỉ vui vẻ.
+    Cảm ơn quý khách đã chọn  Hotel T&T, chúc quý khách có một kỳ nghỉ vui vẻ.
     """.format(receiver, check_in, check_out, info, total)
 
     em = EmailMessage()
@@ -36,8 +36,8 @@ def send(receiver, email_receiver, check_in, check_out, cart, total):
 
 
 def send2(receiver, email_receiver, check_in, check_out, details, total):
-    email = 'cyonhotel@gmail.com'
-    password = "lhpspkeswxzidcci"
+    email = 'hoteltt11@gmail.com'
+    password = "casn fvwc bvqv odcd"
     info = ""
     for d in details:
         info += "Phòng {}: {} \n".format(d, details[d]["name"])
@@ -45,11 +45,11 @@ def send2(receiver, email_receiver, check_in, check_out, details, total):
     subject = "Thông tin đơn đặt phòng"
     body = """
     Chào {},
-    Bạn vừa đặt phòng thành công bên khách sạn Cyon Hotel của chúng tôi. Thông tin đơn đặt phòng bao gồm:
+    Bạn vừa đặt phòng thành công bên khách sạn Hotel T&T của chúng tôi. Thông tin đơn đặt phòng bao gồm:
     Ngày nhận phòng: {}
     Ngày trả phòng: {}
     Các phòng đã đặt:\n{}Tổng tiền: {}
-    Cảm ơn quý khách đã chọn Cyon Hotel, chúc quý khách có một kỳ nghỉ vui vẻ.
+    Cảm ơn quý khách đã chọn  Hotel T&T, chúc quý khách có một kỳ nghỉ vui vẻ.
     """.format(receiver, check_in, check_out, info, total)
 
     em = EmailMessage()

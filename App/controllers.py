@@ -6,8 +6,8 @@ from flask import render_template, session, request, redirect, jsonify
 from flask_login import login_user, current_user, logout_user
 from pdfkit import from_url
 
-from CyonApp import app, utils, dao, send_mail
-from CyonApp.models import UserRole
+from App import app, utils, dao, send_mail
+from App.models import UserRole
 
 
 def index(): # Hiển thị ngày hiện tại và ngày tiếp theo
